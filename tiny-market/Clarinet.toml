@@ -4,7 +4,14 @@ description = ''
 authors = []
 telemetry = true
 cache_dir = '.\.cache'
-requirements = []
+
+[[project.requirements]]
+contract_id = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait'
+[contracts.sip009-nft]
+path = 'contracts/sip009-nft.clar'
+clarity_version = 1
+epoch = 2.0
+
 [contracts.sip009-nft-trait]
 path = 'contracts/sip009-nft-trait.clar'
 clarity_version = 1

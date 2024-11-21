@@ -1,38 +1,15 @@
+(define-trait nft-trait
+  (
+    ;; Last token ID, limited to uint range
+    (get-last-token-id () (response uint uint))
 
-;; title: sip009-nft-trait
-;; version:
-;; summary:
-;; description:
+    ;; URI for metadata associated with the token
+    (get-token-uri (uint) (response (optional (string-ascii 256)) uint))
 
-;; traits
-;;
+     ;; Owner of a given token identifier
+    (get-owner (uint) (response (optional principal) uint))
 
-;; token definitions
-;; 
-
-;; constants
-;;
-
-;; data vars
-;;
-
-;; data maps
-;;
-
-;; public functions
-;;
-(define-public (mint (recipient principal))
-    (let ((token-id (+ (var-get token-id-nonce) u1)))
-        (asserts! (is-eq tx-sender contract-owner) err-owner-only)
-        (try! (nft-mint? stacksies token-id recipient))
-        (asserts! (var-set token-id-nonce token-id) err-token-id-failure)
-        (ok token-id)
-    )
+    ;; Transfer from the sender to a new principal
+    (transfer (uint principal principal) (response bool uint))
+  )
 )
-
-;; read only functions
-;;
-
-;; private functions
-;;
-
