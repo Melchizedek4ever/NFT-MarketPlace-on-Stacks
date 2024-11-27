@@ -6,10 +6,10 @@
 (define-constant CONTRACT_OWNER tx-sender) 
 ;;principal that defined the contract, in this case, will also recieve the 5 STX
 
-(define-constant ERR_NOT_TOKEN_OWNER (err err101))
+(define-constant ERR_NOT_TOKEN_OWNER (err u101))
 
 (define-data-var last-token-id uint u0)
-(define-data-var base-uri (string-ascii 100));; insert external string hash here)
+(define-data-var base-uri (string-ascii 100) "insert external string hash here")
 
 (define-read-only (get-last-token-id)
     (ok (var-get last-token-id))

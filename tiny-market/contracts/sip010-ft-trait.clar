@@ -1,7 +1,7 @@
-(define-trait sip-010-trait
-  (
+(impl-trait 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard.sip-010-trait)
+
     ;; Transfer from the caller to a new principal
-    (transfer (uint principal principal (optional (buff 34))) (response bool uint))
+    (transfer ((amount uint) (sender principal) (recipient principal) (memo (optional (buff 34)))) (response bool uint))
 
     ;; the human readable name of the token
     (get-name () (response (string-ascii 32) uint))
@@ -20,5 +20,4 @@
 
     ;; an optional URI that represents metadata of this token
     (get-token-uri () (response (optional (string-utf8 256)) uint))
-  )
-)
+  
