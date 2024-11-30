@@ -1,4 +1,4 @@
-(impl-trait .sip009.nft-trait)
+(impl-trait 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait.nft-trait)
 
 (define-non-fungible-token sip009-nft uint)
 
@@ -23,10 +23,10 @@
     (ok (nft-get-owner? sip009-nft id))
 )
 
-(define-public (transfer (id uint) (sender principal) (receiver principal))
+(define-public (transfer (id uint) (sender principal) (recipient principal))
     (begin
         (asserts! (is-eq tx-sender sender) ERR_NOT_TOKEN_OWNER)
-        (nft-transfer? sip009-nft id sender receiver)
+        (nft-transfer? sip009-nft id sender recipient)
     )
 )
 
