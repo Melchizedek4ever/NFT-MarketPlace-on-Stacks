@@ -10,6 +10,11 @@ contract_id = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait'
 
 [[project.requirements]]
 contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard'
+[contracts.delegate-stx]
+path = 'contracts/delegate-stx.clar'
+clarity_version = 3
+epoch = 3.0
+
 [contracts.sip009-nft]
 path = 'contracts/sip009-nft.clar'
 clarity_version = 1
